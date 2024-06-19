@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 5fcfe54ba496bd744bc32fede4bfa4a51a4fe93c
+  branch: main
+  specs:
+    faker (3.4.1)
+      i18n (>= 1.8.11, < 2)
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: d3a594920a14a692836392b5a7c0cd4708e25cb3
   specs:
@@ -121,7 +129,6 @@ GEM
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86-linux-gnu)
     ffi (1.17.0-x86-linux-musl)
-    ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     ffi (1.17.0-x86_64-linux-musl)
     font-awesome-sass (6.5.2)
@@ -173,8 +180,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.6-x86-linux)
       racc (~> 1.4)
-    nokogiri (1.16.6-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -185,6 +190,8 @@ GEM
     public_suffix (5.1.1)
     puma (5.6.8)
       nio4r (~> 2.0)
+    pundit (2.3.0)
+      activesupport (>= 3.0.0)
     racc (1.8.0)
     rack (2.2.9)
     rack-test (2.1.0)
@@ -288,7 +295,7 @@ PLATFORMS
   x86-linux
   x86-linux-gnu
   x86-linux-musl
-  x86_64-darwin
+  x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
 
@@ -300,12 +307,14 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  faker!
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
   pg (~> 1.1)
   psych (~> 4.0)
   puma (~> 5.0)
+  pundit
   rails (~> 7.0.8, >= 7.0.8.4)
   sassc-rails
   selenium-webdriver
