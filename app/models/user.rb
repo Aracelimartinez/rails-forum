@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :name, :lastname, :username, presence: true, length: { in: 2..50 }
   validates :name, :lastname, format: { with: /\A[a-zA-Z]+\z/,
                                         message: 'only allows letters' }
+  validates :username, uniqueness: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
