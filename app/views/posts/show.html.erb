@@ -10,4 +10,32 @@
   <% if policy(@post).destroy? %>
   <%= link_to "Destroy",  post_path(@post),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
   <% end %>
+
+  <h2>Comments</h2>
+
+  <h3>Add a Comment</h3>
+  <div>
+    <%= simple_form_for [@post, @comment] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs">
+        <%= f.input :content, label: 'Content:', placeholder: "Post content" %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, value: "Publish", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+      <% @comments.each do |comment| %>
+      <div>
+        <p><%= comment.user.username%></p>
+        <p><%= comment.content%></p>
+        <% if policy(comment).destroy? %>
+        <%=link_to "Delete", comment_path(comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
 </div>

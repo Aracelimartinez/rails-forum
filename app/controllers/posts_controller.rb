@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 
   def show
     authorize @post
+    @comments = @post.comments.order(created_at: :desc)
+    @comment = Comment.new
   end
 
   def new
