@@ -1,20 +1,42 @@
-<h2>Log in</h2>
+<div class= "container">
+  <div class= "card-white">
+    <div class="double-cards-grid">
+      <div  class="sign-card">
+        <h2 class="header-blue mb-4 text-center">Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" },
+                        placeholder: 'Email',
+                        label: false %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" },
+                        placeholder: 'Password',
+                        label: false %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: "btn btn-blue w-100 mt-3" %>
+          </div>
+        <% end %>
+
+        <div class="my-3 text-line">
+          <span>ou</span>
+        </div>
+
+        <div class= "text-center">
+         <%= render "devise/shared/links" %>
+        </div>
+      </div>
+
+      <div class="sign-card p-5">
+        <%= image_tag "undraw_cabin_hkfr.svg" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
