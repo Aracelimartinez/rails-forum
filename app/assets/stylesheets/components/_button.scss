@@ -1,0 +1,23 @@
+.btn-blue {
+  background-color: #3FC1C9;
+  color: #fff;
+
+  &:hover {
+    background-color: #3FC1C9;
+    color: #fff;
+    opacity: 0.6;
+    transition: .1s;
+  }
+}
+
+.btn-gray {
+  background-color: #a7a7a7;
+  color: #fff;
+
+  &:hover {
+    background-color: #797979;
+    color: #fff;
+    opacity: 0.6;
+    transition: .1s;
+  }
+}
