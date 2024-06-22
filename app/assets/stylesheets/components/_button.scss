@@ -1,9 +1,9 @@
 .btn-blue {
-  background-color: #3FC1C9;
+  background-color: $light-blue;
   color: #fff;
 
   &:hover {
-    background-color: #3FC1C9;
+    background-color: $light-blue;
     color: #fff;
     opacity: 0.6;
     transition: .1s;
@@ -11,11 +11,11 @@
 }
 
 .btn-gray {
-  background-color: #a7a7a7;
+  background-color: $medium-gray;
   color: #fff;
 
   &:hover {
-    background-color: #797979;
+    background-color: $medium-gray;
     color: #fff;
     opacity: 0.6;
     transition: .1s;

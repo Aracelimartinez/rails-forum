@@ -1,5 +1,24 @@
 .header-blue {
-  color: #3FC1C9;
+  color: $light-blue;
   font-weight: 700;
   font-size: 32px;
 }
+
+.text-line {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  }
+  .text-line::before, .text-line::after {
+    content: "";
+    position: absolute;
+    top: 0.65em;
+    width: 40%;
+    height: 0.05em;
+    background-color: #666666;
+    left: 0em;
+  }
+  .text-line::after {
+    left: initial;
+    right: 0em;
+  }
