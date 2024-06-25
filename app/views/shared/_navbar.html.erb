@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-site">
+<nav class="navbar navbar-light navbar-site z-3">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand fs-4" do %>
       <i class="fa-solid fa-helmet-safety"></i>
@@ -34,10 +34,10 @@
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link px-2" %>
+              <%= link_to "Home", root_path, class: "nav-link px-2" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Home", root_path, class: "nav-link px-2" %>
+              <%= link_to "Login", new_user_session_path, class: "nav-link px-2" %>
             </li>
           <% end %>
         </ul>

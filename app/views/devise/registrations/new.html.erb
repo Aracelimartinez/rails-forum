@@ -1,7 +1,7 @@
 <div class= "container">
   <div class= "card-white">
     <div class="double-cards-grid">
-      <div class="sign-card">
+      <div class="grid-card">
         <h2 class="header-blue mb-4 text-center">Sign up</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
           <%= f.error_notification %>
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <div class="sign-card">
+      <div class="grid-card">
         <%= image_tag "undraw_mobile_login_re_9ntv.svg" %>
       </div>
     </div>

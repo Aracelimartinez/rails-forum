@@ -1,16 +1,38 @@
-<div class="container">
-  <h1>Welcome to <strong>somename</strong></h1>
-  <p>Find anything about contruction!</p>
+<div class="banner">
+  <div class="container double-cards-grid">
+    <div class="grid-card">
+      <h1 class="fw-bold fs-1">Welcome to ConstruForum</h1>
+      <p class="fw-semibold text-body-tertiary fs-5">Find anything about contruction!</p>
 
-  <%= link_to "Create new post", new_post_path%>
-
-  <div>
-    <% @posts.each do |post| %>
-    <div>
-      <h2><%= post.title%></h2>
-      <p><%= post.content%></p>
-    <%= link_to "See more ...", post_path(post), class: "text-decoration-none" %>
+      <div class="card text-bg-secondary text-white border-0 rounded-4 my-5">
+        <div class="card-body">
+          <h2 class="card-title fw-semibold fs-5">Create your own post</h2>
+          <p class="card-text">Contribute to the community or ask for help in any topic related to construction.</p>
+          <%= link_to new_post_path, class: "btn btn-secondary text-white border border-light" do%>
+            <i class="fa-solid fa-arrow-right"></i>
+          <%end%>
+        </div>
+      </div>
     </div>
+    <div class="grid-card">
+      <%= image_tag "undraw_under_construction_-46-pa.svg" %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="fw-semibold fs-2 mb-4">See what people are talking about..</h2>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @posts.each do |post| %>
+      <div class="col">
+        <div class="card post-card">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h3 class="card-title fw-semibold fs-5 text-break"><%= post.title%></h3>
+            <p class="card-text text-break truncate-paragraph"><%= post.content%></p>
+            <%= link_to "See more ...", post_path(post), class: "btn btn-primary text-white border border-light rounded-3" %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
