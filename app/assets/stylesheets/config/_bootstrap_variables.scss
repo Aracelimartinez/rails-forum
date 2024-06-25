@@ -11,12 +11,13 @@ $body-bg:                $light-gray;
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $light-blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+$body-color:    $gray;
+$primary:       $light-blue;
+$success:       $green;
+$info:          $yellow;
+$danger:        $red;
+$warning:       $orange;
+$navbar-color:  $white;
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
@@ -25,4 +26,18 @@ $border-radius-lg:            .25rem;
 $border-radius-xl:            .5rem;
 $border-radius-xxl:           1rem;
 
-// Override other variables below!
+// Navigation bar
+$navbar-light-color:                rgba($navbar-color, .80);
+$navbar-light-hover-color:          rgba($navbar-color, .95);
+$navbar-light-active-color:         rgba($navbar-color, 1);
+// $navbar-light-disabled-color:       rgba(var(--#{$prefix}emphasis-color-rgb), .3);
+$navbar-light-icon-color:           rgba($navbar-color, .9);
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-border-color: rgba($navbar-color, .9);
+// $navbar-light-brand-color:          $navbar-light-active-color;
+// $navbar-light-brand-hover-color:    $navbar-light-active-color;
+
+
+//Off canvas
+$offcanvas-bg-color:                $primary;
+$offcanvas-color:                   $navbar-color;
