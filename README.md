@@ -166,4 +166,5 @@ Projeto de estudo para uma empresa empresa fictícia que deseja criar um espaço
     - Relações: Um usuário pode ter muitos posts e comentários, enquanto um post pode ter muitos comentários.
     - Referências: Utilizamos chaves estrangeiras para manter a integridade referencial entre as tabelas, garantindo que cada post e comentário estejam sempre associados a um usuário válido.
   - Com esta estrutura simples garantimos a possibilidade de escalar a aplicação e adicionar otras funcionalidades de forma fácil e segura. Por exemplo: adição de uma tabela de likes associados aos posts e usuários onde a relação seja única para evitar mais de um Like por usuário por post.
+    
      ![image](./public/squema-database.png)
