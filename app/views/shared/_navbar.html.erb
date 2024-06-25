@@ -21,23 +21,23 @@
               <%= current_user.name + " " + current_user.lastname%>
             </li>
             <li class="nav-item">
-              <%= link_to "Home", root_path, class: "nav-link px-2", aria: { current: :page} %>
+              <%= link_to "Página inicial", root_path, class: "nav-link px-2", aria: { current: :page} %>
             </li>
             <li class="nav-item">
-              <%= link_to "My posts", my_posts_posts_path, class: "nav-link px-2" %>
+              <%= link_to "Minhas publicações", my_posts_posts_path, class: "nav-link px-2" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Edit my profile", edit_user_registration_path, class: "nav-link  px-2" %>
+              <%= link_to "Editar meu perfil", edit_user_registration_path, class: "nav-link  px-2" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link  px-2" %>
+              <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link  px-2" %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Home", root_path, class: "nav-link px-2" %>
+              <%= link_to "Página inicial", root_path, class: "nav-link px-2" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link px-2" %>
+              <%= link_to "Entrar na minha conta", new_user_session_path, class: "nav-link px-2" %>
             </li>
           <% end %>
         </ul>

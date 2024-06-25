@@ -23,10 +23,14 @@
     right: 0em;
   }
 
-  .truncate-paragraph {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.truncate-paragraph {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preformatted-text {
+  white-space: pre-wrap;
+}

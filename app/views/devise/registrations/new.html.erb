@@ -2,7 +2,7 @@
   <div class= "card-white">
     <div class="double-cards-grid">
       <div class="grid-card">
-        <h2 class="header-blue mb-4 text-center">Sign up</h2>
+        <h2 class="header-blue mb-4 text-center">Registrar-se</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
           <%= f.error_notification %>
 
@@ -10,12 +10,12 @@
             <%= f.input :name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "Name"},
+                        input_html: { autocomplete: "Nome"},
                         placeholder: 'Name'%>
             <%= f.input :lastname,
                         required: true,
                         autofocus: true,
-                        placeholder: 'Last name'%>
+                        placeholder: 'Sobrenome'%>
             <%= f.input :username,
                         required: true,
                         autofocus: true,
@@ -26,15 +26,15 @@
                         placeholder: 'Email'%>
             <%= f.input :password,
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        placeholder: 'Password' %>
+                        hint: ("#{@minimum_password_length} caracteres mínimo" if @minimum_password_length),
+                        placeholder: 'Senha' %>
             <%= f.input :password_confirmation,
                         required: true,
-                        placeholder: 'Password confirmation' %>
+                        placeholder: 'Confirmação de senha' %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Join", class: "btn btn-blue w-100 mt-3" %>
+            <%= f.button :submit, "Unir-me", class: "btn btn-blue w-100 mt-3" %>
           </div>
         <% end %>
 

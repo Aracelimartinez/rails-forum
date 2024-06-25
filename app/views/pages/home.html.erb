@@ -1,13 +1,13 @@
 <div class="banner">
   <div class="container double-cards-grid">
     <div class="grid-card">
-      <h1 class="fw-bold fs-1">Welcome to ConstruForum</h1>
-      <p class="fw-semibold text-body-tertiary fs-5">Find anything about contruction!</p>
+      <h1 class="fw-bold fs-1">Bemvindo a ConstruForum</h1>
+      <p class="fw-semibold text-body-tertiary fs-5">O lugar onde você pode encontrar tudo sobre construção!</p>
 
       <div class="card text-bg-secondary text-white border-0 rounded-4 my-5">
         <div class="card-body">
-          <h2 class="card-title fw-semibold fs-5">Create your own post</h2>
-          <p class="card-text">Contribute to the community or ask for help in any topic related to construction.</p>
+          <h2 class="card-title fw-semibold fs-5">Contribua com sua experiência</h2>
+          <p class="card-text">Crie a sua publicação e contribua com a comunidade ou peça ajuda sobre qualquer tema relacionado a construção.</p>
           <%= link_to new_post_path, class: "btn btn-secondary text-white border border-light" do%>
             <i class="fa-solid fa-arrow-right"></i>
           <%end%>
@@ -20,8 +20,8 @@
   </div>
 </div>
 
-<div class="container">
-  <h2 class="fw-semibold fs-2 mb-4">See what people are talking about..</h2>
+<div class="container mb-4">
+  <h2 class="fw-semibold fs-2 mb-4">Veja do que as pessoas estão falando..</h2>
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <% @posts.each do |post| %>
       <div class="col">
@@ -29,7 +29,7 @@
           <div class="card-body d-flex flex-column justify-content-between">
             <h3 class="card-title fw-semibold fs-5 text-break text-truncate"><%= post.title%></h3>
             <p class="card-text text-break truncate-paragraph"><%= post.content%></p>
-            <%= link_to "See more ...", post_path(post), class: "btn btn-primary text-white border border-light rounded-3" %>
+            <%= link_to "Ver mais...", post_path(post), class: "btn btn-primary text-white border border-light rounded-3" %>
           </div>
         </div>
       </div>

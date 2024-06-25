@@ -1,41 +1,60 @@
-<div>
+<div class="container">
 
-  <h2><%=@post.title%></h2>
-  <p><%=@post.content%></p>
-  <p><%=@post.user.username%></p>
+  <div class="post-card-large">
+    <div  class= "d-flex justify-content-end mb-4">
+      <% if policy(@post).edit? %>
+        <%= link_to edit_post_path(@post), class: "btn btn-secondary text-white border border-light rounded-3  ms-2" do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+      <% end %>
+      <% if policy(@post).destroy? %>
+        <%= link_to post_path(@post),  data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' }, class: "btn btn-danger text-white border border-light rounded-3 ms-2" do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
 
-  <% if policy(@post).edit? %>
-  <%= link_to "Edit", edit_post_path(@post)%>
-  <% end %>
-  <% if policy(@post).destroy? %>
-  <%= link_to "Destroy",  post_path(@post),  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
-  <% end %>
-
-  <h2>Comments</h2>
-
-  <h3>Add a Comment</h3>
-  <div>
-    <%= simple_form_for [@post, @comment] do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <div class="form-inputs">
-        <%= f.input :content, label: 'Content:', placeholder: "Post content" %>
+    <h1 class="fw-semibold fs-2 mb-3"><%=@post.title%></h1>
+    <div class="text-body-tertiary mb-3 fs-6">
+      <div>
+        <i class="fa-solid fa-user"></i>
+        <p class="d-inline-block mx-1 my-1"><%=@post.user.username%></p>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, value: "Publish", class: "btn btn-primary" %>
+      <div>
+        <i class="fa-solid fa-calendar"></i>
+        <p class="d-inline-block mx-1 my-1"><%=@post.created_at.strftime("%d/%m/%Y %H:%M")%></p>
       </div>
-    <% end %>
+    </div>
+
+    <p><%=simple_format(@post.content)%></p>
   </div>
 
-  <div>
+  <div class="post-card-large">
+    <h2 class="fw-semibold fs-3 mb-3">Comentários</h2>
+    <div class="mb-3">
+      <%= simple_form_for [@post, @comment] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form-inputs">
+          <%= f.input :content, label: false, placeholder: "Adicionar comentário" %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, value: "Publicar", class: "btn btn-primary text-white" %>
+        </div>
+      <% end %>
+    </div>
+
       <% @comments.each do |comment| %>
-      <div>
-        <p><%= comment.user.username%></p>
-        <p><%= comment.content%></p>
+      <div class="border-bottom border-top py-2">
+        <div class="text-body-tertiary mb-1 fs-6 d-flex justify-content-start">
+          <p class="m-0"><%= comment.user.username + " - " + comment.created_at.strftime("%d/%m/%Y %H:%M")%></p>
+        </div>
+        <p class="m-0 preformatted-text"><%=comment.content%></p>
         <% if policy(comment).destroy? %>
-        <%=link_to "Delete", comment_path(comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+          <%=link_to "Eliminar", comment_path(comment), data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?'}, class: "text-decoration-none" %>
         <% end %>
       </div>
       <% end %>
-    </div>
+
+  </div>
 </div>
