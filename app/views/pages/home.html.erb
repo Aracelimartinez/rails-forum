@@ -27,7 +27,7 @@
       <div class="col">
         <div class="card post-card">
           <div class="card-body d-flex flex-column justify-content-between">
-            <h3 class="card-title fw-semibold fs-5 text-break"><%= post.title%></h3>
+            <h3 class="card-title fw-semibold fs-5 text-break text-truncate"><%= post.title%></h3>
             <p class="card-text text-break truncate-paragraph"><%= post.content%></p>
             <%= link_to "See more ...", post_path(post), class: "btn btn-primary text-white border border-light rounded-3" %>
           </div>

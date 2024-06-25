@@ -21,3 +21,14 @@
     transition: .1s;
   }
 }
+
+#add-post-btn {
+  text-align: center;
+  color: white;
+  background-color: $light-blue;
+  padding: 4px ;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  text-decoration: none;
+}
